@@ -23,7 +23,7 @@ A simple ProgressiveWebApp that displays the news from Ansa.it with a simple int
 </td>
 </table>
 
-![](https://media.giphy.com/media/H4bg4SvgDYkmm0D0ZA/giphy_s.gif)
+![](https://media.giphy.com/media/H4bg4SvgDYkmm0D0ZA/giphy.gif)
 
 ## Make it yours
 Files to edit
