@@ -1,0 +1,17 @@
+:root {
+    --statusbar-bg: rgba(0, 0, 0, 0.8);
+}
+
+/** Status Bar **/
+
+.statusbar {
+    position: fixed;
+    width: 100vw;
+    height: env(safe-area-inset-top);
+    background: var(--statusbar-bg);
+    z-index: 999;
+}
+
+.fake-statusbar {
+    height: env(safe-area-inset-top);
+}

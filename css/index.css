@@ -1,0 +1,238 @@
+@import "colors.css";
+
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'iA Writer Duospace', monospace;
+}
+
+a {
+    color: var(--link-text-color);
+    text-decoration: none;
+}
+
+/** Title **/
+
+.title {
+    font-size: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: var(--title-text-color);
+    font-weight: bold;
+}
+
+/** iPhone X Notch Support **/
+
+#menu-list:first-child {
+    margin-top: env(safe-area-inset-top);
+}
+
+#articles-list:last-child,
+#menu-list:last-child {
+    margin-bottom: env(safe-area-inset-bottom);
+}
+
+/** Add to Homescreen icon **/
+
+.add-to-homescreen {
+    width: 46px;
+    height: 46px;
+    position: relative;
+    float: right;
+    text-align: left;
+    margin-left: 24px;
+    margin-top: 46px;
+    margin-right: 24px;
+    font-size: 32px;
+    color: var(--hamburger-color);
+}
+
+/** Pull to refresh */
+
+.scrollup {
+    background: #ddd;
+    text-align: center;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+/** Hamburger menu icon **/
+
+.hamburger {
+    padding: 0;
+    margin: 0;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger-inner {
+    background: var(--hamburger-color);
+}
+
+.hamburger:hover,
+.hamburger.is-active:hover {
+    opacity: 1 !important;
+}
+
+.toggle-button {
+    background: transparent;
+    font-size: 50px;
+    outline: none;
+    border: 0;
+    margin-left: 24px;
+    margin-top: 24px;
+    margin-right: 24px;
+}
+
+.toggle-button:hover {
+    cursor: pointer;
+}
+
+/** Loading shimmer **/
+
+.ph-item {
+    border: none;
+    margin-top: -26px;
+    background: var(--content-bg-color);
+}
+
+.ph-item:before {
+    background: var(--shimmer-bg);
+}
+
+.ph-row>[class^="ph-col-"] {
+    background-color: var(--shimmer-col-bg);
+}
+
+/** Articles **/
+
+#articles-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.article {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 48px;
+}
+
+.article-title {
+    font-weight: bold;
+    color: var(--title-text-color);
+    font-size: 24px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.article-description {
+    font-size: 16px;
+    color: var(--description-text-color);
+    overflow: hidden;
+    margin-top: -16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/** Pull to Refresh */
+
+body.refreshing #inbox {
+    filter: blur(1px);
+    touch-action: none;
+    /* prevent scrolling */
+}
+
+body.refreshing .refresher {
+    transform: translate3d(0, 150%, 0) scale(1);
+    z-index: 1;
+}
+
+.refresher {
+    --refresh-width: 55px;
+    pointer-events: none;
+    width: var(--refresh-width);
+    height: var(--refresh-width);
+    border-radius: 50%;
+    position: absolute;
+    transition: all 300ms cubic-bezier(0, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+/** Scroll disablers */
+
+.disable-scroll {
+    overflow-y: hidden;
+}
+
+/** Menu **/
+
+#menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 16px;
+    background: var(--drawer-item-bg-color);
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-item:active {
+    background: var(--drawer-item-hover-bg-color);
+}
+
+.menu-item.unselectable {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-size: 18px;
+}
+
+.menu-item.unselectable:active {
+    background: var(--drawer-bg-color);
+    cursor: default;
+}
+
+@media (hover: hover) {
+    .menu-item:hover {
+        background: var(--drawer-item-hover-bg-color);
+        cursor: pointer;
+    }
+
+    .menu-item.unselectable:hover {
+        background: var(--drawer-bg-color);
+        cursor: default;
+    }
+
+    .article:hover {
+        cursor: pointer;
+    }
+
+    .article-overlay-toolbar-back:hover {
+        cursor: pointer;
+    }
+}
