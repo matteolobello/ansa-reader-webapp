@@ -1,6 +1,3 @@
-const APP_NAME = "Ansa"
-const APP_DESCRIPTION = "Ansa News Reader"
-
 /**
  * All the items in the navigation drawer:
  *  {
