@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
 
-    <title></title>
+    <title>Ansa</title>
 
-    <meta id="application-name" name="application-name" content="">
-    <meta id="description" name="description" content="">
+    <meta id="application-name" name="application-name" content="Ansa">
+    <meta id="description" name="description" content="Ansa News Reader">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Ansa">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -64,35 +64,49 @@
     <!-- This div makes the notch safe-area colored -->
     <div class="statusbar"></div>
 
-    <!-- Navigation drawer -->
-    <nav id="menu">
-        <ul id="menu-list"></ul>
-    </nav>
+    <div class="home">
+        <!-- Navigation drawer -->
+        <nav id="menu">
+            <ul id="menu-list"></ul>
+        </nav>
 
-    <!-- Page content -->
-    <main id="panel">
-        <!-- This div works as a margin-top, simulating the iPhone X notch -->
-        <div class="fake-statusbar"></div>
+        <!-- Page content -->
+        <main id="panel">
+            <!-- This div works as a margin-top, simulating the iPhone X notch -->
+            <div class="fake-statusbar"></div>
 
-        <!-- Upper part of the page -->
-        <header>
-            <div class="hamburger hamburger--collapse toggle-button">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
+            <!-- Upper part of the page -->
+            <header>
+                <div class="hamburger hamburger--collapse toggle-button">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
                 </div>
+                <div class="add-to-homescreen">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 20 20">
+                        <title>Download</title>
+                        <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
+                        <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
+                    </svg>
+                </div>
+                <h1 class="title">Ansa</h1>
+            </header>
+            <ul id="articles-list"></ul>
+            <div class="loading"></div>
+        </main>
+    </div>
+
+    <div class="expanded-article">
+        <div class="expanded-article-toolbar">
+            <div class="expanded-article-toolbar-back">
+                <h5>Back</h5>
             </div>
-            <div class="add-to-homescreen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 20 20">
-                    <title>Download</title>
-                    <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
-                    <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
-                </svg>
-            </div>
-            <h1 class="title">Ansa</h1>
-        </header>
-        <ul id="articles-list"></ul>
-        <div class="loading"></div>
-    </main>
+        </div>
+        <div class="fake-statusbar"></div>
+        <div style="height: 80px"></div>
+        <h1 class="expanded-article-title"></h1>
+        <p class="expanded-article-text">Loading...</p>
+    </div>
 
     <script src="external/jquery/jquery.min.js"></script>
     <script src="external/slideout/slideout.min.js"></script>

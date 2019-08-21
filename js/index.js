@@ -3,8 +3,7 @@ const ALL_ORIGINS_BASE_URL = "https://api.allorigins.win/get?url="
 
 // The message of the dialog that appears 
 // when you tap on the 'Add to homescreen' icon 
-const PWA_ALERT_MSG = `
-    This page can be downloaded and installed like a normal app
+const PWA_ALERT_MSG = `This page can be downloaded and installed like a normal app
     \n
     \nIf you're on iOS, press the share button and then "Add to homescreen".
     \nIf you're on Android, press the three dots button and tap "Add to homescreen".
@@ -86,13 +85,13 @@ function spawnShimmerLoadingItems() {
 
 function setLoadingState(loading) {
     if (loading) {
-        $("#articles-list").css("display", "none")
+        $("#articles-list").fadeOut()
         spawnShimmerLoadingItems()
-        $(".loading").css("display", "block")
+        $(".loading").fadeIn()
     } else {
-        $("#articles-list").css("display", "block")
+        $("#articles-list").fadeIn()
         $(".loading").html("")
-        $(".loading").css("display", "none")
+        $(".loading").fadeOut()
     }
 }
 
@@ -121,38 +120,38 @@ let slideout = new Slideout({
     padding: 256,
     tolerance: 70,
     touch: false
-});
+})
 
 $(".toggle-button").click(() => {
-    slideout.toggle();
+    slideout.toggle()
     if (slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll");
+        $("#panel").addClass("disable-scroll")
         $(".toggle-button").addClass("is-active")
     } else {
-        $("#panel").removeClass("disable-scroll");
+        $("#panel").removeClass("disable-scroll")
         $(".toggle-button").removeClass("is-active")
     }
 })
 
 slideout.on("translate", () => {
     if (!slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll");
+        $("#panel").addClass("disable-scroll")
         $(".toggle-button").addClass("is-active")
     } else {
-        $("#panel").removeClass("disable-scroll");
+        $("#panel").removeClass("disable-scroll")
         $(".toggle-button").removeClass("is-active")
     }
-});
+})
 
 slideout.on("close", () => {
     if (slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll");
+        $("#panel").addClass("disable-scroll")
         $(".toggle-button").addClass("is-active")
     } else {
-        $("#panel").removeClass("disable-scroll");
+        $("#panel").removeClass("disable-scroll")
         $(".toggle-button").removeClass("is-active")
     }
-});
+})
 
 /** Clicks */
 
@@ -172,19 +171,46 @@ $("body").on("click", ".article", function () {
     let articleUrl = $(this).data("article-url")
     let title = $(this).find(".article-title").html()
     if (articleUrl) {
-        location.href = "article.html?url=" + articleUrl + "&title=" + title
+        showExpandedArticle(title, articleUrl)
     }
 })
+
+$("body").on("click", ".expanded-article-toolbar-back", function () {
+    $("body").css("overflow", "scroll")
+    $(".expanded-article").fadeOut()
+})
+
+/** Expanded article */
+
+function showExpandedArticle(title, articleUrl) {
+    $(".expanded-article-title").html(title)
+    $(".expanded-article-text").html("Loading...")
+
+    $(".expanded-article").fadeIn()
+
+    $("body").css("overflow", "hidden")
+
+    $.getJSON("https://api.allorigins.win/get?url=" + articleUrl,
+        function (res) {
+            if (res) {
+                let article = parseArticleContent(res)
+                $(".expanded-article-text").html(article.text)
+            } else {
+                if (confirm("Error while making network request, try again?")) {
+                    showExpandedArticle(title, articleUrl)
+                } else {
+                    $(".expanded-article").fadeOut()
+                }
+            }
+        }
+    )
+}
 
 /** Init */
 
 function init() {
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/js/service-worker.js").then(function (registration) {
-            console.log("Service worker installed correctly, scope:", registration.scope)
-        }).catch(function (error) {
-            console.log("Error installing Service Worker:", error)
-        })
+        navigator.serviceWorker.register("/service-worker.js")
     }
 
     let isMobileUser = function () {

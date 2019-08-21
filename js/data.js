@@ -96,8 +96,14 @@ function parseArticlesList(responseJsonObj) {
  */
 function parseArticleContent(responseJsonObj) {
     let html = responseJsonObj.contents
-    let articleTitle = $(html).find(".news-title").html().trim().replace(/\s\s+/g, " ");
-    let articleText = $(html).find(".news-txt").html().trim().replace(/\s\s+/g, " ");
+    let articleTitle = $(html).find(".news-title").html()
+        .replace(/^\s+|\s+$/gm, " ")
+        .replace(/<\/?[a-z][a-z0-9]*[^<>]*>/ig, "")
+        .trim()
+    let articleText = $(html).find(".news-txt").html()
+        .replace(/^\s+|\s+$/gm, " ")
+        .replace(/<\/?[a-z][a-z0-9]*[^<>]*>/ig, "")
+        .trim()
 
     return {
         title: articleTitle,

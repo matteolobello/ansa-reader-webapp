@@ -9,7 +9,7 @@
     width: 100vw;
     height: env(safe-area-inset-top);
     background: var(--statusbar-bg);
-    z-index: 999;
+    z-index: 999999999;
 }
 
 .fake-statusbar {

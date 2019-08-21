@@ -217,6 +217,67 @@ body.refreshing .refresher {
     cursor: default;
 }
 
+/** Expanded article */
+
+.expanded-article {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    bottom: 0%;
+    top: 0%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    background: var(--content-bg-color);
+    display: none;
+}
+
+.expanded-article-toolbar {
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    background: var(--statusbar-bg);
+    margin-top: env(safe-area-inset-top);
+}
+
+.expanded-article-toolbar-back {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 24px;
+    margin-right: 24px;
+    position: absolute;
+    top: 50%;
+    font-size: 32px;
+    color: white;
+    transform: translateY(-50%);
+}
+
+.expanded-article-toolbar-back:hover {
+    cursor: pointer;
+}
+
+.expanded-article-content {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.expanded-article-title {
+    font-size: 32px;
+    margin-left: 24px;
+    margin-right: 24px;
+    color: var(--title-text-color);
+}
+
+.expanded-article-text {
+    font-size: 22px;
+    margin-left: 24px;
+    margin-right: 24px;
+    color: var(--description-text-color);
+}
+
+/** Hover state */
+
 @media (hover: hover) {
     .menu-item:hover {
         background: var(--drawer-item-hover-bg-color);

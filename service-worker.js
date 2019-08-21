@@ -5,7 +5,6 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(
         [
-          '/css/article.css',
           '/css/colors.css',
           '/css/index.css',
           '/css/nav-drawer.css',
@@ -27,13 +26,11 @@ self.addEventListener('install', event => {
           '/external/xml2json/xml2json.min.js',
           '/imgs/app-logo/logo.png',
           // No need to cache Splash screen icons
-          '/js/article.js',
           '/js/dark-mode.js',
           '/js/data.js',
           '/js/index.js',
           '/js/service-worker.js',
-          'article.html',
-          'index.html'
+          '/index.html'
         ]
       )
     })
