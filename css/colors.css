@@ -1,4 +1,7 @@
 :root {
+    color-scheme: light dark;
+
+    --statusbar-bg: rgba(255, 255, 255, 0.75);
     --title-text-color: #000000;
     --description-text-color: #444444;
     --drawer-bg-color: #444444;
@@ -17,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --statusbar-bg: black;
+        --statusbar-bg: rgba(0, 0, 0, 0.75);
         --title-text-color: #FFFFFF;
         --description-text-color: #D3D3D3;
         --drawer-bg-color: #000000;
