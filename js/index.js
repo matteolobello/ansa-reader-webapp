@@ -209,10 +209,6 @@ function showExpandedArticle(title, articleUrl) {
 /** Init */
 
 function init() {
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/service-worker.js")
-    }
-
     let isMobileUser = function () {
         const userAgent = window.navigator.userAgent.toLowerCase()
         return /iphone|ipad|ipod|android/.test(userAgent)
