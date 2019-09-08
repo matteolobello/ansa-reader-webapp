@@ -249,7 +249,7 @@ body.refreshing .refresher {
     position: absolute;
     top: 50%;
     font-size: 32px;
-    color: white;
+    color: var(--title-text-color);
     transform: translateY(-50%);
 }
 

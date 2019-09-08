@@ -17,7 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --statusbar-bg: rgba(0, 0, 0, 0.65);
+        --statusbar-bg: black;
         --title-text-color: #FFFFFF;
         --description-text-color: #D3D3D3;
         --drawer-bg-color: #000000;
