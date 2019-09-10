@@ -4,13 +4,17 @@
     --statusbar-bg: rgba(255, 255, 255, 0.75);
     --title-text-color: #000000;
     --description-text-color: #444444;
-    --drawer-bg-color: #444444;
-    --drawer-item-bg-color: #444444;
-    --drawer-item-hover-bg-color: #242424;
+    --drawer-bg-color: #FFFFFF;
+    --drawer-item-bg-color: #FFFFFF;
+    --drawer-item-hover-bg-color: #D3D3D3;
+    --drawer-item-text-color: #000000;
     --content-bg-color: #FFFFFF;
+    --article-item-hover-bg-color: #D3D3D3;
+    --toolbar-back-hover-bg-color: #D3D3D3;
     --link-text-color: #000000;
+    --divider-color: #D3D3D3;
     --hamburger-color: #000000;
-    --loading-overlay-bg-color: rgba(255, 255, 255, 0.6);
+    --hamburger-hover-bg-color: #D3D3D3;
     --shimmer-bg: linear-gradient(90deg,
             hsla(0, 0%, 100%, 0) 46%,
             hsla(0, 0%, 100%, .35) 50%,
@@ -23,17 +27,21 @@
         --statusbar-bg: rgba(0, 0, 0, 0.75);
         --title-text-color: #FFFFFF;
         --description-text-color: #D3D3D3;
-        --drawer-bg-color: #000000;
-        --drawer-item-bg-color: #000000;
+        --drawer-bg-color: #121212;
+        --drawer-item-bg-color: #121212;
         --drawer-item-hover-bg-color: #444444;
+        --drawer-item-text-color: #FFFFFF;
         --content-bg-color: #121212;
+        --article-item-hover-bg-color: #444444;
+        --toolbar-back-hover-bg-color: #444444;
         --link-text-color: #F8F5F5;
+        --divider-color: #444444;
         --hamburger-color: #FFFFFF;
-        --loading-overlay-bg-color: rgba(0, 0, 0, 0.6);
+        --hamburger-hover-bg-color: #444444;
         --shimmer-bg: linear-gradient(90deg,
                 hsla(0, 0%, 30%, 0) 46%,
                 hsla(0, 0%, 20%, .35) 50%,
-                rgba(25, 25, 25, 0) 54%) 50% 50%;
+                hsla(25, 25, 25, 0) 54%) 50% 50%;
         --shimmer-col-bg: #444444;
     }
 }

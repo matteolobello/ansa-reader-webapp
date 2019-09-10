@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="external/fonts/fonts.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/statusbar.css">
-    <link rel="stylesheet" href="css/nav-drawer.css">
+    <link rel="stylesheet" href="css/ripple.css">
 </head>
 
 <body>
@@ -65,35 +65,27 @@
     <div class="statusbar"></div>
 
     <div class="home">
-        <!-- Navigation drawer -->
-        <nav id="menu">
-            <ul id="menu-list"></ul>
-        </nav>
+        <!-- This div works as a margin-top, simulating the iPhone X notch -->
+        <div class="fake-statusbar"></div>
 
-        <!-- Page content -->
-        <main id="panel">
-            <!-- This div works as a margin-top, simulating the iPhone X notch -->
-            <div class="fake-statusbar"></div>
-
-            <!-- Upper part of the page -->
-            <header>
-                <div class="hamburger hamburger--collapse toggle-button">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-                <div class="add-to-homescreen">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 20 20">
-                        <title>Download</title>
-                        <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
-                        <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
-                    </svg>
-                </div>
-                <h1 class="title">Ansa</h1>
-            </header>
-            <ul id="articles-list"></ul>
-            <div class="loading"></div>
-        </main>
+        <!-- Upper part of the page -->
+        <header>
+            <svg class="hamburger" enable-background="new 0 0 44 44" height="44" viewBox="0 0 32 32" width="44"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z" />
+            </svg>
+            <div class="add-to-homescreen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 20 20">
+                    <title>Download</title>
+                    <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
+                    <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
+                </svg>
+            </div>
+            <h1 class="title">Ansa</h1>
+        </header>
+        <ul id="articles-list"></ul>
+        <div class="loading"></div>
     </div>
 
     <div class="expanded-article">
@@ -108,8 +100,18 @@
         <p class="expanded-article-text">Loading...</p>
     </div>
 
+    <div class="expanded-menu">
+        <div class="expanded-menu-toolbar">
+            <div class="expanded-menu-toolbar-close">
+                <h5>Close</h5>
+            </div>
+        </div>
+        <div class="fake-statusbar"></div>
+        <div style="height: 80px"></div>
+        <ul id="menu-list"></ul>
+    </div>
+
     <script src="external/jquery/jquery.min.js"></script>
-    <script src="external/slideout/slideout.min.js"></script>
     <script src="external/xml2json/xml2json.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/dark-mode.js"></script>

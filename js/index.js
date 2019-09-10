@@ -61,6 +61,7 @@ function addArticles(articles) {
         }
 
         html += `</div>
+                 <hr>
             </li>`
 
         $("#articles-list").append(html)
@@ -114,46 +115,11 @@ function buildNavDrawerMenuHtml() {
 
 $("#menu-list").html(buildNavDrawerMenuHtml())
 
-let slideout = new Slideout({
-    panel: document.getElementById("panel"),
-    menu: document.getElementById("menu"),
-    padding: 256,
-    tolerance: 70,
-    touch: false
-})
-
-$(".toggle-button").click(() => {
-    slideout.toggle()
-    if (slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll")
-        $(".toggle-button").addClass("is-active")
-    } else {
-        $("#panel").removeClass("disable-scroll")
-        $(".toggle-button").removeClass("is-active")
-    }
-})
-
-slideout.on("translate", () => {
-    if (!slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll")
-        $(".toggle-button").addClass("is-active")
-    } else {
-        $("#panel").removeClass("disable-scroll")
-        $(".toggle-button").removeClass("is-active")
-    }
-})
-
-slideout.on("close", () => {
-    if (slideout.isOpen()) {
-        $("#panel").addClass("disable-scroll")
-        $(".toggle-button").addClass("is-active")
-    } else {
-        $("#panel").removeClass("disable-scroll")
-        $(".toggle-button").removeClass("is-active")
-    }
-})
-
 /** Clicks */
+
+$("body").on("click", ".hamburger", function () {
+    $(".expanded-menu").css("transform", "translate(0, 0)")
+})
 
 $("body").on("click", ".add-to-homescreen", function () {
     alert(PWA_ALERT_MSG)
@@ -162,7 +128,8 @@ $("body").on("click", ".add-to-homescreen", function () {
 $("body").on("click", ".menu-item", function () {
     let url = $(this).data("url")
     if (url) {
-        slideout.close()
+        $("body").css("overflow", "scroll")
+        $(".expanded-menu").css("transform", "translate(0, 100vh)")
         dispatchArticlesByCategory(url)
     }
 })
@@ -177,7 +144,12 @@ $("body").on("click", ".article", function () {
 
 $("body").on("click", ".expanded-article-toolbar-back", function () {
     $("body").css("overflow", "scroll")
-    $(".expanded-article").fadeOut()
+    $(".expanded-article").css("transform", "translate(0, 100vh)")
+})
+
+$("body").on("click", ".expanded-menu-toolbar-close", function () {
+    $("body").css("overflow", "scroll")
+    $(".expanded-menu").css("transform", "translate(0, 100vh)")
 })
 
 /** Expanded article */
@@ -186,7 +158,7 @@ function showExpandedArticle(title, articleUrl) {
     $(".expanded-article-title").html(title)
     $(".expanded-article-text").html("Loading...")
 
-    $(".expanded-article").fadeIn()
+    $(".expanded-article").css("transform", "translate(0, 0)")
 
     $("body").css("overflow", "hidden")
 
@@ -199,7 +171,8 @@ function showExpandedArticle(title, articleUrl) {
                 if (confirm("Error while making network request, try again?")) {
                     showExpandedArticle(title, articleUrl)
                 } else {
-                    $(".expanded-article").fadeOut()
+                    $("body").css("overflow", "scroll")
+                    $(".expanded-article").css("transform", "translate(0, 100vh)")
                 }
             }
         }
@@ -221,7 +194,7 @@ function init() {
     if (isMobileUser() && !isInStandaloneMode()) {
         $(".add-to-homescreen").css("display", "block")
     } else {
-        $(".add-to-homescreen").css("display", "none")
+        //$(".add-to-homescreen").css("display", "none")
     }
 
     dispatchArticlesByCategory(FIRST_MENU_ITEM.url)
