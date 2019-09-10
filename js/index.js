@@ -194,7 +194,7 @@ function init() {
     if (isMobileUser() && !isInStandaloneMode()) {
         $(".add-to-homescreen").css("display", "block")
     } else {
-        //$(".add-to-homescreen").css("display", "none")
+        $(".add-to-homescreen").css("display", "none")
     }
 
     dispatchArticlesByCategory(FIRST_MENU_ITEM.url)
