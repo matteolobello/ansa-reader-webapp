@@ -1,4 +1,4 @@
-# Ansa PWA
+# AnsaWebApp
 
 A simple web app that displays the news from Ansa.it with a simple interface.
 
