@@ -302,44 +302,42 @@ hr {
 
 /** Active state */
 
-@media (active: active) {
-    * {
-        border-radius: 8px;
-        transition: background 0.4s;
-    }
+* {
+    border-radius: 8px;
+    transition: background 0.4s;
+}
 
-    .hamburger:active {
-        cursor: pointer;
-        background: var(--hamburger-hover-bg-color);
-    }
+.hamburger:active {
+    cursor: pointer;
+    background: var(--hamburger-hover-bg-color);
+}
 
-    .add-to-homescreen:active {
-        cursor: pointer;
-        background: var(--hamburger-hover-bg-color);
-    }
+.add-to-homescreen:active {
+    cursor: pointer;
+    background: var(--hamburger-hover-bg-color);
+}
 
-    .menu-item:active {
-        background: var(--drawer-item-hover-bg-color);
-        cursor: pointer;
-    }
+.menu-item:active {
+    background: var(--drawer-item-hover-bg-color);
+    cursor: pointer;
+}
 
-    .menu-item.unselectable:active {
-        background: var(--drawer-bg-color);
-        cursor: default;
-    }
+.menu-item.unselectable:active {
+    background: var(--drawer-bg-color);
+    cursor: default;
+}
 
-    .article:active {
-        cursor: pointer;
-        background: var(--article-item-hover-bg-color);
-    }
+.article:active {
+    cursor: pointer;
+    background: var(--article-item-hover-bg-color);
+}
 
-    .expanded-article-toolbar-back>h5:active {
-        cursor: pointer;
-        background: var(--toolbar-back-hover-bg-color);
-    }
+.expanded-article-toolbar-back>h5:active {
+    cursor: pointer;
+    background: var(--toolbar-back-hover-bg-color);
+}
 
-    .expanded-menu-toolbar-close>h5:active {
-        cursor: pointer;
-        background: var(--toolbar-back-hover-bg-color);
-    }
+.expanded-menu-toolbar-close>h5:active {
+    cursor: pointer;
+    background: var(--toolbar-back-hover-bg-color);
 }
