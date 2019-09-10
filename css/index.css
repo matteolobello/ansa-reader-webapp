@@ -10,6 +10,11 @@ body {
     font-family: 'iA Writer Duospace';
 }
 
+* {
+    border-radius: 8px;
+    transition: background 0.4s;
+}
+
 a {
     color: var(--link-text-color);
     text-decoration: none;
@@ -90,6 +95,8 @@ hr {
 
 .article {
     padding: 24px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .article-title {
@@ -259,10 +266,6 @@ hr {
 /** Hover state */
 
 @media (hover: hover) {
-    * {
-        border-radius: 8px;
-        transition: background 0.4s;
-    }
 
     .hamburger:hover {
         cursor: pointer;
@@ -300,12 +303,7 @@ hr {
     }
 }
 
-/** Active state */
-
-* {
-    border-radius: 8px;
-    transition: background 0.4s;
-}
+/** Focus state */
 
 .hamburger:active {
     cursor: pointer;
