@@ -1,6 +1,6 @@
 # Ansa PWA
 
-A simple ProgressiveWebApp that displays the news from Ansa.it with a simple interface.
+A simple web app that displays the news from Ansa.it with a simple interface.
 
 <table>
 <td>
@@ -27,6 +27,10 @@ A simple ProgressiveWebApp that displays the news from Ansa.it with a simple int
   <img src="https://media.giphy.com/media/H4bg4SvgDYkmm0D0ZA/giphy.gif">
 </p>
 
+## Link
+You can find this web app on Netlify here
+https://jolly-payne-c097f9.netlify.com/
+
 ## Make it yours
 Files to edit
   - 'imgs/app-logo/logo.png' (must be 512x512)
@@ -37,8 +41,6 @@ Files to edit
 
 ## Credits
  - https://github.com/iaolo/iA-Fonts
- - https://jonsuh.com/hamburgers
  - https://jquery.com
  - https://github.com/zalog/placeholder-loading
- - https://slideout.js.org
  - https://github.com/abdolence/x2js
