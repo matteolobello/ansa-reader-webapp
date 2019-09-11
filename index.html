@@ -62,7 +62,7 @@
     <!-- This div makes the notch safe-area colored -->
     <div class="statusbar"></div>
 
-    <div class="home">
+    <div class="home text-unselectable">
         <!-- This div works as a margin-top, simulating the iPhone X notch -->
         <div class="fake-statusbar"></div>
 
@@ -87,18 +87,20 @@
     </div>
 
     <div class="expanded-article">
-        <div class="expanded-article-toolbar">
+        <div class="expanded-article-toolbar text-unselectable">
             <div class="expanded-article-toolbar-back">
                 <h5>Back</h5>
             </div>
         </div>
         <div class="fake-statusbar"></div>
         <div style="height: 80px"></div>
+        <hr>
+        <div style="height: 16px"></div>
         <h1 class="expanded-article-title"></h1>
         <p class="expanded-article-text">Loading...</p>
     </div>
 
-    <div class="expanded-menu">
+    <div class="expanded-menu text-unselectable">
         <div class="expanded-menu-toolbar">
             <div class="expanded-menu-toolbar-close">
                 <h5>Close</h5>
@@ -106,6 +108,8 @@
         </div>
         <div class="fake-statusbar"></div>
         <div style="height: 80px"></div>
+        <hr>
+        <div style="height: 16px"></div>
         <ul id="menu-list"></ul>
     </div>
 

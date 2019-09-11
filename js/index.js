@@ -130,6 +130,7 @@ $("body").on("click", ".menu-item", function () {
     if (url) {
         $("body").css("overflow", "scroll")
         $(".expanded-menu").css("transform", "translate(0, 100vh)")
+        $(".expanded-menu").animate({scrollTop: 0})
         dispatchArticlesByCategory(url)
     }
 })
