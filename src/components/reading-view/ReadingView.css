@@ -1,0 +1,19 @@
+.text {
+    display: block;
+    color: var(--title);
+    font-size: 24px;
+}
+
+.loading {
+    display: block;
+    color: var(--title);
+    font-size: 24px;
+}
+
+.link {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: var(--description);
+    font-size: 28px;
+}

@@ -1,0 +1,21 @@
+{
+    "short_name": "ANSA",
+    "name": "ANSA News Reader",
+    "description": "Latest news from ANSA.it",
+    "icons": [
+        {
+            "src": "imgs/app-logo/logo.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "imgs/app-logo/logo.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000"
+}

@@ -1,0 +1,50 @@
+::root {
+    --header-height: 72px;
+}
+
+hr {
+    width: 100vw;
+}
+
+.hamburger {
+    margin-top: 32px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 16px;
+    fill: var(--title);
+    border-radius: 8px;
+    transition: background 0.5s;
+}
+
+.hamburger:hover,
+.hamburger:active {
+    cursor: pointer;
+    background: var(--highlight);
+}
+
+.divider {
+    color: var(--title);
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 22px;
+}
+
+.category {
+    color: var(--description);
+    font-size: 20px;
+    padding: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 8px;
+    transition: background 0.5s;
+}
+
+.category:hover,
+.category:active {
+    background: var(--highlight);
+    cursor: pointer;
+}
+
+.category:last-of-type {
+    margin-bottom: 24px;
+}

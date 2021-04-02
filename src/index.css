@@ -1,0 +1,33 @@
+@import "fonts.css";
+
+:root {
+    --title: #000000;
+    --description: #121212;
+    --background: #ffffff;
+	--highlight: rgba(0, 0, 0, 0.25);
+    --horizontal-margin: 15vw;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --title: #ffffff;
+        --description: #d4d4d4;
+        --background: #000000;
+		--highlight: rgba(255, 255, 255, 0.25);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --horizontal-margin: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+	font-family: 'iA Writer Duospace';
+    padding-left: calc(var(--horizontal-margin) + env(safe-area-inset-left));
+    padding-right: calc(var(--horizontal-margin) + env(safe-area-inset-right));
+	user-select: none;
+}
