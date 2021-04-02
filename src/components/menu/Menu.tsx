@@ -28,7 +28,7 @@ export const Menu = (props: IProps) => {
 
     useEffect(() => {
         props.onExpandToggle(isExpanded)
-    }, [isExpanded])
+    }, [props, isExpanded])
 
     return (
         <>
