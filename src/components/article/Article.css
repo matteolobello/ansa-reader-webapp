@@ -1,35 +1,38 @@
 .article {
-    padding: 16px;
-    margin-left: -16px;
-    margin-right: -16px;
-    margin-bottom: 48px;
-    border-radius: 8px;
-    transition: background 0.5s;
+	padding: 16px;
+	margin-left: -16px;
+	margin-right: -16px;
+	margin-bottom: 48px;
+	border-radius: 8px;
+	transition: background 0.5s;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }
 
 .article:hover,
 .article:active {
-    background: var(--highlight);
-    cursor: pointer;
+	background: var(--highlight);
+	cursor: pointer;
 }
 
 .pub-date {
-    display: block;
-    color: var(--description);
-    font-size: 22px;
+	display: block;
+	color: var(--description);
+	font-size: 22px;
 }
 
 .title {
-    display: block;
-    color: var(--title);
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 8px;
+	display: block;
+	color: var(--title);
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 .description {
-    display: block;
-    color: var(--description);
-    font-size: 20px;
+	display: block;
+	color: var(--description);
+	font-size: 20px;
 }
